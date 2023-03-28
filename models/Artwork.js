@@ -18,6 +18,7 @@ Artwork.init(
     date: {
       type: DataTypes.DATE,
       allowNull: false,
+      defaultValue: DataTypes.NOW,
     },
     image_url: {
       type: DataTypes.STRING,
