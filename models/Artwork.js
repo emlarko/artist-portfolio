@@ -15,9 +15,10 @@ Artwork.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    date_created: {
+    date: {
       type: DataTypes.DATE,
       allowNull: false,
+      defaultValue: DataTypes.NOW,
     },
     image_url: {
       type: DataTypes.STRING,
@@ -31,6 +32,13 @@ Artwork.init(
       type: DataTypes.INTEGER,
       references: {
         model: 'gallery',
+        key: 'id',
+      },
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
         key: 'id',
       },
     },
