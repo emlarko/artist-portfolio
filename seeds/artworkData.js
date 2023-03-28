@@ -4,7 +4,7 @@ const artworkdata = [
   {
     id: 1,
     title: 'Blossoming Apricot',
-    image_url: '',
+    image_url: 'https://res.cloudinary.com/dw7efo700/image/upload/v1680032815/artwork/pollinate_xwxvdk.jpg',
     description:
       'Branches with pink apricot blossoms against a blue background.',
     gallery_id: 1,
@@ -20,7 +20,7 @@ const artworkdata = [
   {
     id: 3,
     title: 'Blossoming Apricot',
-    image_url: '',
+    image_url: 'https://res.cloudinary.com/dw7efo700/image/upload/v1680033028/artwork/986300010033_rr0cv8.jpg',
     description:
       'Two beach chairs under a beach umbrella on the beach.',
     gallery_id: 3,
@@ -28,7 +28,7 @@ const artworkdata = [
   {
     id: 4,
     title: 'Blossoming Apricot',
-    image_url: '',
+    image_url: 'https://res.cloudinary.com/dw7efo700/image/upload/v1680033126/artwork/DSC_1037_kxxatu.jpg',
     description:
       'Branches with pink apricot blossoms against a blue background.',
     gallery_id: 4,
