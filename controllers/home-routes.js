@@ -68,3 +68,4 @@ router.get('/artwork/:id', async (req, res) => {
   }
 });
 
+module.exports = router;
