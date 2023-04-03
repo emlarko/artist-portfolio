@@ -4,6 +4,7 @@ const Artwork = require('./Artwork');
 
 Gallery.hasMany(Artwork, {
   foreignKey: 'gallery_id',
+  onDelete: 'CASCADE',
 });
 
 Artwork.belongsTo(Gallery, {
@@ -12,6 +13,7 @@ Artwork.belongsTo(Gallery, {
 
 User.hasMany(Artwork, {
   foreignKey: 'user_id',
+  onDelete: 'CASCADE',
 });
 
 Artwork.belongsTo(User, {
