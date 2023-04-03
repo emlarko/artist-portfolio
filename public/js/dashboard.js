@@ -8,7 +8,7 @@ const newFormHandler = async (event) => {
   const imageURL = document.querySelector('#image-url').value.trim();
 
   if (title && description && imageURL) {
-    const response = await fetch('/api/artwork', {
+    const response = await fetch('/api/artworks', {
       method: 'POST',
       body: JSON.stringify({ title, description, imageURL}),
       headers: {
@@ -28,7 +28,7 @@ const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
-    const response = await fetch(`/api/artwork/${id}`, {
+    const response = await fetch(`/api/artworks/${id}`, {
       method: 'DELETE',
     });
 
@@ -41,9 +41,9 @@ const delButtonHandler = async (event) => {
 };
 
 document
-  .querySelector('.new-blog-form')
+  .querySelector('.new-artwork-form')
   .addEventListener('submit', newFormHandler);
 
 document
-  .querySelector('.blog-list')
+  .querySelector('.artwork-list')
   .addEventListener('click', delButtonHandler);

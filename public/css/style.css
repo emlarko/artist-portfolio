@@ -1,0 +1,18 @@
+body {
+    font-family: 'Roboto Slab', serif;
+    background-color: #D4F2BB;
+}
+
+main {
+    padding: 40px
+}
+
+.nav-link {
+    color: white;
+    font-size: 20px;
+    align-items: right;
+}
+
+.nav-link:hover {
+    color: #D4F2BB;
+}
