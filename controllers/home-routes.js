@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Gallery, User, Artwork } = require('../models');
+const withAuth = require('../utils/auth');
 
 // GET all galleries for homepage
 router.get('/', async (req, res) => {
@@ -32,7 +33,7 @@ router.get('/gallery/:id', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: [username],
+          attributes: ['name'],
         },
         {
           model: Artwork,
@@ -43,7 +44,8 @@ router.get('/gallery/:id', async (req, res) => {
             'image_url',
             'description',
           ],
-        },
+          include: [User],
+        }
       ],
     });
 
@@ -54,6 +56,7 @@ router.get('/gallery/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 
 // GET one artwork
 router.get('/artwork/:id', async (req, res) => {
@@ -67,5 +70,35 @@ router.get('/artwork/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+router.get('/dashboard', withAuth, async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Artwork }],
+    });
+
+    const user = userData.get({ plain: true });
+
+    res.render('dashboard', {
+      ...user,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/login', (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_in) {
+    res.redirect('/dashboard');
+    return;
+  }
+
+  res.render('login');
+});
+
 
 module.exports = router;

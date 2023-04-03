@@ -10,4 +10,12 @@ Artwork.belongsTo(Gallery, {
   foreignKey: 'gallery_id',
 });
 
+User.hasMany(Artwork, {
+  foreignKey: 'user_id',
+});
+
+Artwork.belongsTo(User, {
+  foreignKey: 'user_id',
+});
+
 module.exports = { User, Gallery, Artwork };
