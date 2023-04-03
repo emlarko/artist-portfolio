@@ -17,6 +17,7 @@ router.get('/', async (req, res) => {
     const galleries = dbGalleryData.map((gallery) =>
       gallery.get({ plain: true })
     );
+    console.log(galleries[0].artworks);
     res.render('homepage', {
       galleries,
     });
@@ -27,44 +28,54 @@ router.get('/', async (req, res) => {
 });
 
 // GET one gallery
-router.get('/gallery/:id', async (req, res) => {
-  try {
-    const dbGalleryData = await Gallery.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-        {
-          model: Artwork,
-          attributes: [
-            'id',
-            'title',
-            'date',
-            'image_url',
-            'description',
-          ],
-          include: [User],
-        }
-      ],
-    });
+// router.get('/gallery/:id', async (req, res) => {
+//   try {
+//     const dbGalleryData = await Gallery.findByPk(req.params.id, {
+//       include: [
+//         {
+//           model: User,
+//           attributes: ['name'],
+//         },
+//         {
+//           model: Artwork,
+//           attributes: [
+//             'id',
+//             'title',
+//             'date',
+//             'image_url',
+//             'description',
+//           ],
+//           include: [User],
+//         }
+//       ],
+//     });
 
-    const gallery = dbGalleryData.get({ plain: true });
-    res.render('gallery', { gallery });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
+//     const gallery = dbGalleryData.get({ plain: true });
+//     res.render('gallery', { gallery });
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// });
 
 
 // GET one artwork
-router.get('/artwork/:id', async (req, res) => {
+router.get('/gallery/:id', async (req, res) => {
+  console.log(req.params);
   try {
-    const dbArtworkData = await Artwork.findByPk(req.params.id);
+    const dbArtworkData = await Artwork.findAll({
+      where: {gallery_id: req.params.id},
+      // include: [
+      //   {
+      //     model: User,
+      //     attributes: ['name'],
+      //   },
+      // ],
+    });
 
     const artwork = dbArtworkData.get({ plain: true });
-    res.render('artwork', { artwork });
+    console.log('artwork', artwork);
+    res.render('gallery-item', { artwork });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
