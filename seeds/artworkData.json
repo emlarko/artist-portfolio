@@ -1,34 +1,82 @@
 [
-    {
-        "title": "Pollinate",
-        "image_url": "https://res.cloudinary.com/dw7efo700/image/upload/v1680032815/artwork/pollinate_xwxvdk.jpg",
-        "description":
-          "Branches with pink apricot blossoms against a blue background.",
-        "gallery_id": 1,
-        "user_id": 1
-    },
-    {
-        "title": "Blossoming Apricot",
-        "image_url": "",
-        "description":
-          "Sandy beach with the blue sea and sky in the background.",
-        "gallery_id": 2,
-        "user_id": 1
-    },
-    {
-        "title": "Blossoming Apricot",
-        "image_url": "https://res.cloudinary.com/dw7efo700/image/upload/v1680033028/artwork/986300010033_rr0cv8.jpg",
-        "description":
-          "Two beach chairs under a beach umbrella on the beach.",
-        "gallery_id": 3,
-        "user_id": 1
-    },
-    {
-        "title": "Blossoming Apricot",
-        "image_url": "https://res.cloudinary.com/dw7efo700/image/upload/v1680033126/artwork/DSC_1037_kxxatu.jpg",
-        "description":
-          "Branches with pink apricot blossoms against a blue background.",
-        "gallery_id": 4,
-        "user_id": 1
-    }
+  {
+      "title": "Pollinate",
+      "image_url": "https://res.cloudinary.com/dw7efo700/image/upload/c_fill,h_330,w_500/v1680526109/artwork/pinstallation_sag6kl.jpg",
+      "description":
+        "Installation with a painting of Pomegranates, books and cushions.",
+      "gallery_id": 1,
+      "user_id": 1
+  },
+  {
+      "title": "Snowy Sunshine",
+      "image_url": "https://res.cloudinary.com/dw7efo700/image/upload/c_fill,h_330,w_500/v1680526109/artwork/000020320021_bk0wi1.jpg",
+      "description":
+        "A photograph of Kew Gardens in the snow.",
+      "gallery_id": 2,
+      "user_id": 1
+  },
+  {
+      "title": "Flower",
+      "image_url": "https://res.cloudinary.com/dw7efo700/image/upload/c_fill,h_330,w_500/v1680033028/artwork/986300010033_rr0cv8.jpg",
+      "description":
+        "A double exposure of a flower with a cut Pomegranate",
+      "gallery_id": 3,
+      "user_id": 1
+  },
+  {
+      "title": "Rose",
+      "image_url": "https://res.cloudinary.com/dw7efo700/image/upload/c_fill,h_330,w_500/v1680528038/artwork/DSC_0031_5_mc9asq.jpg",
+      "description":
+        "Embroidery of a rose",
+      "gallery_id": 4,
+      "user_id": 1
+  },
+  {
+    "title": "Rose Painting",
+    "image_url": "https://res.cloudinary.com/dw7efo700/image/upload/c_scale,w_500/v1680526528/artwork/DSC_0008_11SMALL_a8ho8o.jpg",
+    "description":
+      "Oil Painting of a rose",
+    "gallery_id": 1,
+    "user_id": 1 
+  },
+  {
+    "title": "Kew Flowers",
+    "image_url": "https://res.cloudinary.com/dw7efo700/image/upload/c_scale,w_500/v1680526178/artwork/000020320015_sjtssa.jpg",
+    "description":
+      "Film photograph of flowers at Kew",
+    "gallery_id": 2,
+    "user_id": 1
+  },
+  {
+    "title": "Squirrel",
+    "image_url": "https://res.cloudinary.com/dw7efo700/image/upload/c_fill,w_500/v1680527253/artwork/PHOTO-2023-03-30-14-55-51_ttonmf.jpg",
+    "description":
+      "Photograph of Squirrel",
+    "gallery_id": 2,
+    "user_id": 2
+  },
+  {
+    "title": "Moon",
+    "image_url": "https://res.cloudinary.com/dw7efo700/image/upload/c_scale,w_500/v1680527253/artwork/PHOTO-2021-12-22-21-42-22_ua4ekp.jpg",
+    "description":
+      "Photograph of the Moon",
+    "gallery_id": 2,
+    "user_id": 2
+  },
+  {
+    "title": "Pomegranate",
+    "image_url": "https://res.cloudinary.com/dw7efo700/image/upload/c_scale,w_500/v1680526108/artwork/986300020012_euiva9.jpg",
+    "description":
+      "Black and White film photograph of a pomegranate",
+    "gallery_id": 3,
+    "user_id": 1
+  },
+  {
+    "title": "Apples",
+    "image_url": "https://res.cloudinary.com/dw7efo700/image/upload/c_scale,w_500/v1680033126/artwork/DSC_1037_kxxatu.jpg",
+    "description":
+      "Embroidery of an apple",
+    "gallery_id": 4,
+    "user_id": 1
+  }
 ]
