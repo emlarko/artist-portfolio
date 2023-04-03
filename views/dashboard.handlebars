@@ -1,23 +1,39 @@
 <div class="dashboard">
 <div class="row">
-  <div class="col-auto">
+  <div class="col col-lg-2">
     <h2>Welcome, {{name}}!</h2>
   </div>
 </div>
 
 <div class="row mt-4">
   <div class="col-md-6">
+    <h3>Upload a New Artwork</h3>
     <h3>Upload a New Artwork Image:</h3>
+       <button 
+      id="upload_widget" 
+      class="cloudinary-button">
+        Upload files
+    </button>
+     <img  
+      id="uploadedimage" 
+      src="" style="width:500px;height:auto;">
+    </img> 
 
     <form class="form new-artwork-form">
       <div class="form-group">
         <input class="form-input" type="text" id="artwork-title" name="artwork-title" placeholder="Artwork Title" />
       </div>
-      
       <div class="form-group">
         <textarea class="form-input" id="artwork-desc" name="artwork-desc" placeholder="Artwork Description"></textarea>
       </div>
       <div class="form-group">
+       <label for="gallery">Choose a Gallery:</label>
+        <select id="gallery" name="gallery">
+        <option value="1">Painting</option>
+        <option value="2">Photography</option>
+        <option value="3">Black and White Photography</option>
+        <option value="4">Craft</option>
+        </select>
         <button type="submit" class="btn btn-primary">Create</button>
       </div>
     </form>
@@ -25,7 +41,7 @@
 
   {{#if artworks.length}}
   <div class="col-md-6 artwork-list">
-    <h3>Current Artwork Images:</h3>
+    <h3>Current Artwork</h3>
 
     {{#each artworks as |artwork|}}
     <div class="row mb-2">
@@ -43,3 +59,14 @@
 
 <script src="/js/dashboard.js"></script>
 </div>
+
+    <script 
+     src="https://widget.cloudinary.com/v2.0/global/all.js" 
+     type="text/javascript">
+    </script>
+
+    <!-- local upload instantiation -->
+    <script 
+     src="/js/upload.js" 
+     type="text/javascript">
+    </script>

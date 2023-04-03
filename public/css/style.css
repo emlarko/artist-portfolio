@@ -60,4 +60,9 @@ h1 {
   margin: 10px;
   border-color: white;
 }
+
+#image {
+  width: 500px;
+  height: auto;
+}
   

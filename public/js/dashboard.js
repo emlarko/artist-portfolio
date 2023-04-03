@@ -5,12 +5,15 @@ const newFormHandler = async (event) => {
 
   const description = document.querySelector('#artwork-desc').value.trim();
 
-  const imageURL = document.querySelector('#image-url').value.trim();
+  const image_url = document.getElementById('uploadedimage').getAttribute('src');
 
-  if (title && description && imageURL) {
+  const gallery_id = document.querySelector('#gallery').value.trim();
+
+  if (title && description && image_url && gallery_id) {
+    console.log(title, description, image_url, gallery_id);
     const response = await fetch('/api/artworks', {
       method: 'POST',
-      body: JSON.stringify({ title, description, imageURL}),
+      body: JSON.stringify({ title, description, image_url, gallery}),
       headers: {
         'Content-Type': 'application/json',
       },

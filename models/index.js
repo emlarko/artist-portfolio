@@ -1,6 +1,7 @@
 const User = require('./User');
 const Gallery = require('./Gallery');
 const Artwork = require('./Artwork');
+const Comment = require('./Comment');
 
 Gallery.hasMany(Artwork, {
   foreignKey: 'gallery_id',
@@ -20,4 +21,20 @@ Artwork.belongsTo(User, {
   foreignKey: 'user_id',
 });
 
-module.exports = { User, Gallery, Artwork };
+Artwork.hasMany(Comment, {
+  foreignKey: 'artwork_id',
+});
+
+Comment.belongsTo(Artwork, {
+  foreignKey: 'artwork_id',
+});
+
+User.hasMany(Comment, {
+  foreignKey: 'user_id',
+});
+
+Comment.belongsTo(User, {
+  foreignKey: 'user_id',
+});
+
+module.exports = { User, Gallery, Artwork, Comment };
