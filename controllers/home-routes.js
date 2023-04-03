@@ -20,6 +20,7 @@ router.get('/', async (req, res) => {
     console.log(galleries[0].artworks);
     res.render('homepage', {
       galleries,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     console.log(err);
@@ -45,7 +46,10 @@ router.get('/gallery/:id', async (req, res) => {
     });
 
     const gallery = dbGalleryData.get({ plain: true });
-    res.render('gallery', { gallery });
+    res.render('gallery', {
+      gallery,
+      logged_in: req.session.logged_in,
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -67,7 +71,10 @@ router.get('/artwork/:id', async (req, res) => {
 
     const artwork = dbArtworkData.get({ plain: true });
     console.log('artwork', artwork);
-    res.render('artwork', { artwork });
+    res.render('artwork', {
+      artwork,
+      logged_in: req.session.logged_in,
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
