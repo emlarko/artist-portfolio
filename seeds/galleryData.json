@@ -1,14 +1,18 @@
 [
     {
+        "id": 1,
         "name": "Painting"
     },
     {
+        "id": 2,
         "name": "Photography"
     },
     {
+        "id": 3,
         "name": "Black and White Photography"
     },
     {
+        "id": 4,
         "name": "Craft"
     }
 ]
