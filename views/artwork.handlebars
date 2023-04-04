@@ -1,13 +1,19 @@
-<section class="container">
+<div class="artwork">
+<div class="row">
+<section class="col-md-6">
 
     <header><h1>{{artwork.title}}</h1></header>
       <img id="image" src="{{artwork.image_url}}" alt="{{artwork.description}}">
-      <p>By: {{artwork.user.name}}</p>
+      <p>By: {{artwork.user.name}}, Posted on: {{format_date artwork.date}} </p>
+	  <p>Description: {{artwork.description}}</p>
     </div>
 
+</section>
+
+<section class="col-md-6">
 		{{#if logged_in}}
 
-		<form class="new-comment-form formCont d-flex flex-wrap justify-content-center" data-artworkid={{id}}>
+			<form class="new-comment-form formCont d-flex flex-wrap justify-content-center" data-artid={{artwork.id}}>
 			<div class="textAreaCont p-2">
 				<textarea id='comment_description' name="comment-body"
 				placeholder="Enter a comment here..."
@@ -22,11 +28,14 @@
 		{{/if}}
 
 		<h2 class="text-center">Comments</h2>
-		{{#each comments as |comment|}}
+		{{#each artwork.comments as |comment|}}
 		<div class="commentCont">
 			<p class="text-center commentText">{{comment.comment_description}}</p>
-			<p class="text-center commentOwner">Created by {{comment.user.name}} on {{format_date date_created}}</p>	
+			<p class="text-center commentOwner">{{comment.user.name}} on {{format_date comment.date_created}}</p>	
 		</div>
 		{{/each}}
 </section>
+</div>
+</div>
+
 <script src="/js/comments.js"></script>

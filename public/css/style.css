@@ -2,11 +2,16 @@
   background-image: url("/assets/image/watercolor.jpg");
   width: 100%;
   height: 100vh;
-  padding: 10px;
-  
+  padding: 20px;
 }
+
 body {
     font-family: 'Playfair Display', serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: flex-start;
 }
 
 .navbar {
@@ -14,20 +19,22 @@ body {
   color: white;
 }
 
-
-
-body {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    justify-content: flex-start;
-  }
-
 .nav-link {
     color: white;
     font-size: 20px;
     align-items: right;
+}
+
+.nav-link:hover {
+  color: inherit;
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: inherit;
 }
 
 h1 {
@@ -36,7 +43,6 @@ h1 {
 
 .gallery {
     flex: 4;
-    background-color: #fff;
     padding: 100px;
     display: flex;
     flex-flow: row wrap;
@@ -44,9 +50,59 @@ h1 {
     align-items: center;
   }
 
+.artwork {
+    flex: 4;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.upload {
+  padding: 30px;
+}
+
+.artwork-list {
+  padding: 20px;
+}
+
+.artwork-list a {
+  color: black;
+}
+
+.artwork-list a:hover {
+  color: inherit;
+}
+
+.login {
+  background-image: url("/assets/image/watercolor.jpg");
+  width: 100%;
+  height: 100vh;
+  flex: 4;
+  padding: 30px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
 #gallery-link a {
   background-color: white;
   color: black;
+}
+
+#artwork-link a {
+  background-color: white;
+  color: black;
+}
+
+#art-user {
+  background-color: white;
+  color: black;
+}
+
+.gallery-name {
+  padding: 30px;
 }
 
 .container {
@@ -65,4 +121,36 @@ h1 {
   width: 500px;
   height: auto;
 }
-  
+
+.comments {
+  display: flex;
+  flex-flow: column wrap;
+  align-content: flex-end;
+  align-items: center;
+}
+
+.commentCont {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  max-width: 75%;
+}
+
+.commentOwner {
+  font-size: 14px;
+}
+
+.btnComment {
+  margin-top: 10px;
+}
+
+.commentText {
+  font-weight: bold;
+  padding-top: 10px;
+}
+
+.commentCont {
+  background-color: #E5F4F4;
+  border-style: solid;
+  border-radius: 25px;
+}

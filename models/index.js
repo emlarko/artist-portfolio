@@ -23,6 +23,7 @@ Artwork.belongsTo(User, {
 
 Artwork.hasMany(Comment, {
   foreignKey: 'artwork_id',
+  onDelete: 'CASCADE',
 });
 
 Comment.belongsTo(Artwork, {
