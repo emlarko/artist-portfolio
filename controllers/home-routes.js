@@ -20,7 +20,7 @@ router.get('/', async (req, res) => {
     console.log(galleries[0].artworks);
     res.render('homepage', {
       galleries,
-      logged_in: req.session.logged_in,
+      // logged_in: req.session.logged_in,
     });
   } catch (err) {
     console.log(err);
