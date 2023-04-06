@@ -15,38 +15,35 @@
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <span class="navbar-text">
-      <h1>The Gallery</h1>
-    </span>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="navbar-collapse collapse flex-grow-1 justify-content-end">
-      <div class="navbar-nav">
-        <a class="nav-link" href="/">Home</a>
-        <a class="nav-link" href="/dashboard">Dashboard</a>
-        {{#if logged_in}}
-        <a class="nav-link" id="logout">Logout</a>
-        {{else}}
-        <a class="nav-link" href="/login">Login</a>
-        {{/if}}
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a href="/" style="font-size: 30px; text-transform: uppercase; color: white;" class="navbar-brand">The Gallery</a>
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav" style="font-size: 18px">
+                <a href="/" style="color: white;" class="nav-item nav-link">Home</a>
+                <a href="/dashboard" style="color: white;" class="nav-item nav-link">Dashboard</a>
+            </div>
+            <div class="navbar-nav ms-auto"style="font-size: 18px">
+              {{#if logged_in}}
+                <a class="nav-item nav-link" style="color: white;" id="logout">Logout</a>
+              {{else}}
+                <a href="/login" style="color: white;" class="nav-item nav-link">Login</a>
+              {{/if}}
+            </div>
         </div>
     </div>
-  </div>
 </nav>
   <main>
-   
       {{{body}}}
-   
-  </main>
-
   </main>
   <!-- If the user is logged in, load the JS script for when they logout -->
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </html>

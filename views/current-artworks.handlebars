@@ -1,0 +1,20 @@
+<div class="artwork">
+{{#if artworks.length}}
+  <div class="col-md-5 artwork-list">
+    <h3>Current Artwork</h3>
+
+    {{#each artworks as |artwork|}}
+    <div class="row mb-2">
+        <div class="col-md-8">
+        <img style="width:500px;height:auto;" src="{{artwork.image_url}}" alt="{{artwork.description}}">
+        <h5 id="artwork-link"><a style="position:absolute; left:0px; top:0px" href="/artwork/{{id}}">{{artwork.title}}</a></h5>
+        <button class="btn btn-danger" data-id="{{artwork.id}}">DELETE</button>
+      </div>
+    </div>
+    
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
+
+<script src="/js/delete.js"></script>

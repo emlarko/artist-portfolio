@@ -1,6 +1,6 @@
 <div class="artwork">
 <div class="row">
-<section class="col-md-6">
+<section class="col-lg-6 col-md-6 col-sm-12">
 
     <header><h1>{{artwork.title}}</h1></header>
       <img id="image" src="{{artwork.image_url}}" alt="{{artwork.description}}">
@@ -10,29 +10,23 @@
 
 </section>
 
-<section class="col-md-6">
-		{{#if logged_in}}
-
-			<form class="new-comment-form formCont d-flex flex-wrap justify-content-center" data-artid={{artwork.id}}>
-			<div class="textAreaCont p-2">
-				<textarea id='comment_description' name="comment-body"
-				placeholder="Enter a comment here..."
-				cols="30"
-				rows="2"></textarea>
-			</div>
-			<div class="btnComment p-2">
-				<button class="button btn btn-success" type="submit">Add Comment</button>
-			</div>
+<section class="col-lg-6 col-md-6 col-sm-12">
+	{{#if logged_in}}
+		<form class="new-comment-form formCont d-flex flex-wrap justify-content-center" data-artid={{artwork.id}}>
+			<textarea class="form-input" id='comment_description' name="comment-body"
+			placeholder="Enter a comment here..."></textarea>
 		</form>
+	<button class="button btn btn-success" type="submit">Add Comment</button>
+	{{/if}}
 
-		{{/if}}
-
+	<div class="comments">
 		<h2 class="text-center">Comments</h2>
 		{{#each artwork.comments as |comment|}}
 		<div class="commentCont">
 			<p class="text-center commentText">{{comment.comment_description}}</p>
 			<p class="text-center commentOwner">{{comment.user.name}} on {{format_date comment.date_created}}</p>	
 		</div>
+	</div>
 		{{/each}}
 </section>
 </div>

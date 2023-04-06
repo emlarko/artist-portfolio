@@ -1,12 +1,14 @@
 const router = require('express').Router();
-const { Artwork } = require('../../models');
+const { Artwork, Gallery } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
   try {
     const newArt = await Artwork.create({
+      include:{ model: Gallery },
       ...req.body,
       user_id: req.session.user_id,
+      gallery_id: req.gallery_id,
     });
 
     res.status(200).json(newArt);

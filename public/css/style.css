@@ -5,6 +5,14 @@
   padding: 0 20px;
 }
 
+.dashboard a {
+  color: black;
+}
+
+.dashboard a:hover {
+  color: inherit;
+}
+
 body {
     font-family: 'Playfair Display', serif;
     margin: 0;
@@ -16,25 +24,6 @@ body {
 
 .navbar {
   background: linear-gradient(to bottom right, #3e4242 0%, #69787a 100%);
-  color: white;
-}
-
-.nav-link {
-    color: white;
-    font-size: 20px;
-    align-items: right;
-}
-
-.nav-link:hover {
-  color: inherit;
-}
-
-a {
-  color: white;
-}
-
-a:hover {
-  color: inherit;
 }
 
 h1 {
@@ -58,10 +47,6 @@ h1 {
     align-items: center;
 }
 
-.artwork-list {
-  padding: 20px;
-}
-
 .artwork-list a {
   color: black;
 }
@@ -80,6 +65,14 @@ h1 {
   flex-flow: row wrap;
   justify-content: flex-start;
   align-items: flex-start;
+}
+
+.login a {
+  color: black;
+}
+
+.login a:hover {
+  color: inherit;
 }
 
 #gallery-link a {
@@ -118,35 +111,17 @@ h1 {
   height: auto;
 }
 
-.comments {
+/* .comments {
   display: flex;
   flex-flow: column wrap;
   align-content: flex-end;
   align-items: center;
-}
+} */
 
 .commentCont {
+  background-color: #DAE4E5 ;
   margin-left: auto;
   margin-right: auto;
   margin-top: 10px;
   max-width: 75%;
-}
-
-.commentOwner {
-  font-size: 14px;
-}
-
-.btnComment {
-  margin-top: 10px;
-}
-
-.commentText {
-  font-weight: bold;
-  padding-top: 10px;
-}
-
-.commentCont {
-  background-color: #E5F4F4;
-  border-style: solid;
-  border-radius: 25px;
 }

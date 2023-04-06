@@ -20,7 +20,7 @@ router.get('/', async (req, res) => {
     console.log(galleries[0].artworks);
     res.render('homepage', {
       galleries,
-      // logged_in: req.session.logged_in,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     console.log(err);
@@ -97,6 +97,25 @@ router.get('/dashboard', withAuth, async (req, res) => {
     const user = userData.get({ plain: true });
 
     res.render('dashboard', {
+      ...user,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/current-artworks', withAuth, async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Artwork }],
+    });
+
+    const user = userData.get({ plain: true });
+
+    res.render('current-artworks', {
       ...user,
       logged_in: true
     });
