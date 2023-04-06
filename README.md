@@ -1,5 +1,9 @@
 # Artist-Portfolio
 
+Deployed Heroku app:
+
+https://artist-portfolio.herokuapp.com/
+
 ## Description
 The Gallery application allows Users to upload images of their Artwork to different Galleries after signing up for an account. The User is also able to view other Users’ work and add comments.
 
