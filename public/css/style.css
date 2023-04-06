@@ -47,6 +47,10 @@ h1 {
     align-items: center;
 }
 
+.upload {
+  margin-left: 20px;
+}
+
 .artwork-list a {
   color: black;
 }
@@ -110,13 +114,6 @@ h1 {
   width: 500px;
   height: auto;
 }
-
-/* .comments {
-  display: flex;
-  flex-flow: column wrap;
-  align-content: flex-end;
-  align-items: center;
-} */
 
 .commentCont {
   background-color: #DAE4E5 ;
