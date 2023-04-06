@@ -70,7 +70,7 @@ router.get('/artwork/:id', async (req, res) => {
         {
           model: Comment,
           include: [User],
-        }
+        },
       ],
     });
 
