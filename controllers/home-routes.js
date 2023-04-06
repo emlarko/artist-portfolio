@@ -115,6 +115,7 @@ router.get('/current-artworks', withAuth, async (req, res) => {
 
     const user = userData.get({ plain: true });
 
+    console.log(user);
     res.render('current-artworks', {
       ...user,
       logged_in: true

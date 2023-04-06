@@ -8,7 +8,7 @@ router.post('/', withAuth, async (req, res) => {
       include:{ model: Gallery },
       ...req.body,
       user_id: req.session.user_id,
-      gallery_id: req.gallery_id,
+      gallery_id: req.body.gallery_id,
     });
 
     res.status(200).json(newArt);
