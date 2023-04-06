@@ -13,32 +13,16 @@ const newFormHandler = async (event) => {
     console.log(title, description, image_url, gallery_id);
     const response = await fetch('/api/artworks', {
       method: 'POST',
-      body: JSON.stringify({ title, description, image_url, gallery}),
+      body: JSON.stringify({ title, description, image_url, gallery_id}),
       headers: {
         'Content-Type': 'application/json',
       },
     });
 
     if (response.ok) {
-      document.location.replace('/dashboard');
+      document.location.replace('/current-artworks');
     } else {
       alert('Failed to upload Artwork');
-    }
-  }
-};
-
-const delButtonHandler = async (event) => {
-  if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
-
-    const response = await fetch(`/api/artworks/${id}`, {
-      method: 'DELETE',
-    });
-
-    if (response.ok) {
-      document.location.replace('/dashboard');
-    } else {
-      alert('Failed to delete Artwork');
     }
   }
 };
@@ -47,6 +31,4 @@ document
   .querySelector('.new-artwork-form')
   .addEventListener('submit', newFormHandler);
 
-document
-  .querySelector('.artwork-list')
-  .addEventListener('click', delButtonHandler);
+

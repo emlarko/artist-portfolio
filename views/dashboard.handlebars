@@ -1,7 +1,10 @@
 <div class="dashboard">
 <div class="row">
-  <div class="col-lg-12">
+  <div class="col-lg-6">
     <h2>Welcome, {{name}}!</h2>
+  </div>
+    <div class="col-lg-6">
+      <h3><a href='/current-artworks'>View Current Artwork</a></h3>
   </div>
 </div>
 
@@ -13,49 +16,32 @@
       class="cloudinary-button">
         Upload files
     </button>
-     <img  
-      id="uploadedimage" 
-      src="" style="width:500px;height:auto;">
-    </img> 
 
     <form class="form new-artwork-form">
       <div class="form-group">
         <input class="form-input" type="text" id="artwork-title" name="artwork-title" placeholder="Artwork Title" />
       </div>
       <div class="form-group">
-        <textarea class="form-input" id="artwork-desc" name="artwork-desc" placeholder="Artwork Description"></textarea>
+        <textarea class="form-input" id="artwork-desc" name="artwork-desc" rows= "8" placeholder="Artwork Description"></textarea>
       </div>
       <div class="form-group">
        <label for="gallery">Choose a Gallery:</label>
-        <select id="gallery" name="gallery">
+        <select class="form-select"id="gallery" name="gallery">
         <option value="1">Painting</option>
         <option value="2">Photography</option>
         <option value="3">Black and White Photography</option>
         <option value="4">Craft</option>
         </select>
-        <button type="submit" class="btn btn-primary">Create</button>
-      </div>
+        </div>
+      <button type="submit" class="btn btn-primary">Create</button>
     </form>
   </div>
-
-  {{#if artworks.length}}
-  <div class="col-md-5 artwork-list">
-    <h3>Current Artwork</h3>
-
-    {{#each artworks as |artwork|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h5><a href="/artwork/{{artwork.id}}">{{artwork.title}}</a></h5>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-danger" data-id="{{artwork.id}}">DELETE</button>
-      </div>
-    </div>
-    {{/each}}
-  </div>
-  {{/if}}
-</div>
-
+    <div class="col-md-4">
+         <img  
+      id="uploadedimage" 
+      src="" style="width:500px;height:auto;">
+    </img> 
+ </div>
 <script src="/js/dashboard.js"></script>
 </div>
 
