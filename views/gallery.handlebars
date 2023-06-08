@@ -1,0 +1,16 @@
+<section class="container">
+  <h1 class="gallery-name">{{gallery.name}}</h3>
+  <section class="flex-row justify-center">
+    {{#each gallery.artworks as |artwork|}}
+   <section class="card">
+    <div class="col-md-6">
+  <a href="/artwork/{{artwork.id}}">
+    <img id="image" src="{{artwork.image_url}}" alt="{{artwork.description}}">
+    <h5 id="artwork-link"><a style="position:absolute; left:0px; top:0px" href="/artwork/{{id}}">{{artwork.title}}</a></h5>
+    <p id="art-user" style="position:absolute; left:0px; bottom:0px">By: {{artwork.user.name}}</p>
+  </a>
+</section>
+ </div>
+    {{/each}}
+  </section>
+</section>

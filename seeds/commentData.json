@@ -1,0 +1,20 @@
+[
+	{
+		"id": 1,
+		"artwork_id": 1,
+		"comment_description": "Cool!",
+		"user_id": 3
+	},
+	{
+		"id": 2,
+		"artwork_id": 2,
+		"comment_description": "I love it!",
+		"user_id": 1
+	},
+	{
+		"id": 3,
+		"artwork_id": 3,
+		"comment_description": "Wow!",
+		"user_id": 2
+	}
+]
