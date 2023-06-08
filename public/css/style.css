@@ -6,8 +6,8 @@
 }
 
 .dashboard a {
-  color: black;
-}
+  color: black
+  ;}
 
 .dashboard a:hover {
   color: inherit;
